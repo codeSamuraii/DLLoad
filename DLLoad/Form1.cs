@@ -5,7 +5,7 @@ namespace DLLoad
     public partial class MainForm : Form
     {
         private Process selectedProcess;
-        private Stream selectedDll;
+        private string selectedDll;
 
         public MainForm()
         {
@@ -36,11 +36,16 @@ namespace DLLoad
         {
             var dialogResult = openDllFileDialog.ShowDialog();
             if (dialogResult == DialogResult.OK)
-                selectedDll = openDllFileDialog.OpenFile();
+                selectedDll = openDllFileDialog.FileName;
             else
                 return;
 
             tbDllPath.Text = openDllFileDialog.FileName;
+        }
+
+        private void btnInject_Click(object sender, EventArgs e)
+        {
+            BasicInject.Inject(selectedProcess, selectedDll);
         }
     }
 }

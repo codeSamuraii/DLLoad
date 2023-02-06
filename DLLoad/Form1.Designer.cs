@@ -114,6 +114,7 @@
             this.btnInject.TabIndex = 7;
             this.btnInject.Text = "Load";
             this.btnInject.UseVisualStyleBackColor = true;
+            this.btnInject.Click += new System.EventHandler(this.btnInject_Click);
             // 
             // groupBox1
             // 
