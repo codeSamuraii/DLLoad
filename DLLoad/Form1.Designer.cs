@@ -40,6 +40,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbActivity = new System.Windows.Forms.ListBox();
             this.ilIcons = new System.Windows.Forms.ImageList(this.components);
+            this.openDllFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,6 +104,7 @@
             this.btnBrowseDll.TabIndex = 6;
             this.btnBrowseDll.Text = "...";
             this.btnBrowseDll.UseVisualStyleBackColor = true;
+            this.btnBrowseDll.Click += new System.EventHandler(this.btnBrowseDll_Click);
             // 
             // btnInject
             // 
@@ -137,6 +139,12 @@
             this.ilIcons.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.ilIcons.ImageSize = new System.Drawing.Size(16, 16);
             this.ilIcons.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // openDllFileDialog
+            // 
+            this.openDllFileDialog.DefaultExt = "dll";
+            this.openDllFileDialog.Filter = "DLL|*.dll|Any extension|*.*";
+            this.openDllFileDialog.Title = "Open DLL";
             // 
             // MainForm
             // 
@@ -174,5 +182,6 @@
         private GroupBox groupBox1;
         private ListBox lbActivity;
         private ImageList ilIcons;
+        private OpenFileDialog openDllFileDialog;
     }
 }
